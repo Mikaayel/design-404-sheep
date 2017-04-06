@@ -5,6 +5,12 @@
   "author": "mika rehman",
   "license": "MIT",
   "dependencies": {
+    "css-loader": "^0.28.0",
+    "node-sass": "^4.5.2",
+    "style-loader": "^0.16.1",
     "webpack": "^2.3.3"
+  },
+  "devDependencies": {
+    "sass-loader": "^6.0.3"
   }
 }
