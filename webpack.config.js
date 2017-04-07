@@ -8,7 +8,7 @@ module.exports = {
     },
     plugins: [new HtmlWebpackPlugin({
         title: 'Page Does Not Exist',
-        template: __dirname + '/src/index.ejs',
+        template:  './src/index.ejs',
     })]
 };
 // =======
