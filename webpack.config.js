@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: './src/app.js',
@@ -9,48 +10,28 @@ module.exports = {
     module: {
             rules: [
                 {
-                    test: /\.css$/,
-                    use:[
-                        {
-                            loader: "style-loader"
-                        },
-                        {
-                            loader: "css-loader"
-                        },
-                        {
-                            loader: "sass-loader"
-                        }
-                    ]
+                    test: /\.scss$/,
+                    use: ExtractTextPlugin.extract({
+                        fallback: 'style-loader',
+                        use: ['css-loader', 'sass-loader'],
+                        publicPath: '/dist'
+                    })
                 }
             ]
     },
-    plugins: [new HtmlWebpackPlugin({
-        title: 'Page Does Not Exist',
-        minify: {
-            collapseWhitespace: true
-        },
-        hash: true,
-        template:  './src/index.ejs',
-    })]
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Page Does Not Exist',
+            minify: {
+                collapseWhitespace: true
+            },
+            hash: true,
+            template:  './src/index.ejs',
+        }),
+        new ExtractTextPlugin({
+            filename: "app.css",
+            disable: false,
+            allChunks: true
+        })
+    ]
 };
-// =======
-// module.exports = {
-//     entry: "./app/app.js",
-//     output: {
-//         path:__dirname,
-//         filename: "./public/bundle.js"
-//     },
-//     module: {
-//         rules: [{
-//             test: /\.scss$/,
-//             use: [{
-//                 loader: "style-loader"
-//             }, {
-//                 loader: "css-loader"
-//             }, {
-//                 loader: "sass-loader"
-//             }]
-//         }]
-//     }
-// }
-// >>>>>>> fbdc2fe190587eb8e50e609b365f5944ca83db52
