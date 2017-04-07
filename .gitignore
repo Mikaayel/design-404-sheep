@@ -1,12 +1,9 @@
 #auto-generated stuff
 node_modules/
 yarn.lock
-public/bundle.js
-coverage
-build
+dist/
 stats.json
 
 # trash
 .DS_Store
 npm-debug.log
-.idea

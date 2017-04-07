@@ -4,13 +4,18 @@
   "main": "app.js",
   "author": "mika rehman",
   "license": "MIT",
+  "scripts": {
+    "dev": "webpack -w -d",
+    "prod": "webpack -p"
+  },
   "dependencies": {
-    "css-loader": "^0.28.0",
-    "node-sass": "^4.5.2",
-    "style-loader": "^0.16.1",
-    "webpack": "^2.3.3"
+    "html-webpack-plugin": "^2.28.0"
   },
   "devDependencies": {
-    "sass-loader": "^6.0.3"
+    "css-loader": "^0.28.0",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.3.3"
   }
 }
