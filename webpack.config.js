@@ -8,6 +8,10 @@ module.exports = {
     },
     plugins: [new HtmlWebpackPlugin({
         title: 'Page Does Not Exist',
+        minify: {
+            collapseWhitespace: true
+        },
+        hash: true,
         template:  './src/index.ejs',
     })]
 };
