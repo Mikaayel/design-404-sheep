@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const css = require('./app.scss');
+import Css from './app.scss';
 
 ReactDOM.render(
     <h1>Test Text</h1>,
