@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Css from './app.scss';
+import Css from './css/app.scss';
 
 ReactDOM.render(
     <h1>Test Text</h1>,
