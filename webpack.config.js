@@ -28,8 +28,19 @@ module.exports = {
                     test: /\.js$/,
                     exclude: /node_modules/,
                     use: 'babel-loader'
+                },
+                {
+                    test: /\.jsx?$/,
+                    exclude: /(node_modules|bower_components|\.git)/
                 }
             ]
+    },
+    resolve: {
+        modules: [
+            Path.resolve(__dirname, "src/components"),
+            'node_modules',
+        ],
+        extensions: ['.js', '.jsx']
     },
     devServer: {
         contentBase: Path.join(__dirname, 'dist'),
