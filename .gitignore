@@ -3,6 +3,7 @@ node_modules/
 yarn.lock
 dist/
 stats.json
+.vscode
 
 # trash
 .DS_Store

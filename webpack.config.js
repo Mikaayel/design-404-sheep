@@ -35,8 +35,11 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|jpe?g|gif)$/i,
+                // loader: 'file-loader',
+                include: Path.join(__dirname, 'src'),
                 use: [
-                    'file-loader?name=[hash:12].[ext]&outputPath=/images/&publicPath=',
+                    'file-loader?name=[hash:12].[ext]',
+                    
                     {
                         loader: 'image-webpack-loader',
                         options: {
@@ -51,7 +54,7 @@ module.exports = {
     },
     resolve: {
         modules: [
-            Path.resolve(__dirname, "src/components"),
+            Path.resolve(__dirname, 'src/components'),
             'node_modules'
         ],
         extensions: ['.js', '.jsx']
@@ -61,17 +64,17 @@ module.exports = {
         compress: true,
         hot: true,
         port: 3000,
-        stats: "minimal",
+        stats: 'minimal',
         open: true
     },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Page Does Not Exist',
             minify: {
-                collapseWhitespace: true
+                collapseWhitespace: false
             },
             hash: true,
-            template:  './src/index.ejs',
+            template: './src/index.ejs',
         }),
         new ExtractTextPlugin({
             filename: "app.bundle.css",
