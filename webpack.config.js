@@ -19,26 +19,40 @@ module.exports = {
         filename: 'app.bundle.js'
     },
     module: {
-            rules: [
-                {
-                    test: /\.scss$/,
-                    use: cssConfig
-                },
-                {
-                    test: /\.js$/,
-                    exclude: /node_modules/,
-                    use: 'babel-loader'
-                },
-                {
-                    test: /\.jsx?$/,
-                    exclude: /(node_modules|bower_components|\.git)/
-                }
-            ]
+        rules: [
+            {
+                test: /\.scss$/,
+                use: cssConfig
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: 'babel-loader'
+            },
+            {
+                test: /\.jsx?$/,
+                exclude: /(node_modules|bower_components|\.git)/
+            },
+            {
+                test: /\.(png|svg|jpe?g|gif)$/i,
+                use: [
+                    'file-loader?name=[hash:12].[ext]&outputPath=/images/&publicPath=',
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            gifsicle: {
+                                interlaced: false
+                            } 
+                        }
+                    }
+                ]
+            }
+        ]
     },
     resolve: {
         modules: [
             Path.resolve(__dirname, "src/components"),
-            'node_modules',
+            'node_modules'
         ],
         extensions: ['.js', '.jsx']
     },
@@ -60,7 +74,7 @@ module.exports = {
             template:  './src/index.ejs',
         }),
         new ExtractTextPlugin({
-            filename: "app.css",
+            filename: "app.bundle.css",
             disable: !isProd,
             allChunks: true
         }),

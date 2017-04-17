@@ -1,11 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import css from './css/app.scss';
+import css from './scss/app.scss';
 
 import Navigation from 'navigation';
+import Main from 'main';
 
 ReactDOM.render(
-    <h1>Header One</h1>,
+    <div>
+        <h1>Page Not Found</h1>
+        <h2>We couldn't find what you were looking for.</h2>
+        <Navigation/>
+        <Main/>
+    </div>,
     document.getElementById('root')
 );
