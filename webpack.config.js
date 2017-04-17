@@ -8,7 +8,6 @@ let cssDev = ['style-loader', 'css-loader', 'sass-loader'];
 let cssProd = ExtractTextPlugin.extract({
     fallback: 'style-loader',
     use: ['css-loader', 'sass-loader'],
-    publicPath: '/dist'
 });
 let cssConfig = isProd ? cssProd : cssDev;
 
@@ -38,7 +37,7 @@ module.exports = {
                 // loader: 'file-loader',
                 include: Path.join(__dirname, 'src'),
                 use: [
-                    'file-loader?name=[hash:12].[ext]',
+                    'file-loader?name=[hash:12].[ext]&outputPath=images/',
                     
                     {
                         loader: 'image-webpack-loader',
