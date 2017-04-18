@@ -2,6 +2,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const Webpack = require('webpack');
 const Path = require('path');
+const Glob = require('glob'); // needed for purifycss
+const PurifyCSSPlugin = require('purifycss-webpack');
 
 let isProd = process.env.NODE_ENV === "production";
 let cssDev = ['style-loader', 'css-loader', 'sass-loader'];
@@ -80,11 +82,13 @@ module.exports = {
             disable: !isProd,
             allChunks: true
         }),
-        new Webpack.HotModuleReplacementPlugin(
-
-        ),
-        new Webpack.NamedModulesPlugin(
-
-        )
+        new Webpack.HotModuleReplacementPlugin(),
+        new Webpack.NamedModulesPlugin(),
+        new ExtractTextPlugin('[name].[contenthash].css'),
+        // Make sure this is after ExtractTextPlugin!
+        new PurifyCSSPlugin({
+            // Give paths to parse for rules. These should be absolute!
+            paths: Glob.sync(Path.join(__dirname, 'src/components/*.js')),
+        })
     ]
 };

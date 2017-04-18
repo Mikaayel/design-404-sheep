@@ -1,12 +1,11 @@
 import React from 'react';
 
-let rocket = require('../images/rocket.png');
-
 let Main = React.createClass({
     render: function() {
         return (
-            <div id="rocket">
-                <img src={rocket} />            
+            <div id="main--container">
+                <h1>Page Not Found</h1>
+                <h2>We couldn't find what you were looking for.</h2>           
             </div>
         );
     }

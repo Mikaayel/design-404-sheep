@@ -5,13 +5,13 @@ import css from './scss/app.scss';
 
 import Navigation from 'navigation';
 import Main from 'main';
+import Rocket from 'rocket';
 
 ReactDOM.render(
     <div>
-        <h1>Page Not Found</h1>
-        <h2>We couldn't find what you were looking for.</h2>
         <Navigation/>
         <Main/>
+        <Rocket/>
     </div>,
     document.getElementById('root')
 );

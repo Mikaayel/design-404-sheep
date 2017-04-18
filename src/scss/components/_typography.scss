@@ -1,6 +1,22 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300');
-
 h1 {
     font-size: 4em;
-    font-family: 'Roboto', sans-serif;
+    color: $font-colour-primary;
+}
+
+h2 {
+    font-size: 2em;
+    color: $font-colour-primary;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+p {
+    font-size: 1em;
+    color: red;
+}
+
+.something {
+    color: yellow;
 }
