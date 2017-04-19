@@ -1,6 +1,7 @@
 #auto-generated stuff
 node_modules/
 yarn.lock
+.yarnclean
 dist/
 stats.json
 .vscode

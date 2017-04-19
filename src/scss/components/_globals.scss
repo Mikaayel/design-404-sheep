@@ -2,6 +2,14 @@
 
 $font-colour-primary: #fff;
 
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
+    background: url('../images/Background.svg') bottom center no-repeat;
+    background-size: cover;
 }

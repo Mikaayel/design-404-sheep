@@ -3,15 +3,13 @@ import ReactDOM from 'react-dom';
 
 import css from './scss/app.scss';
 
-import Navigation from 'navigation';
 import Main from 'main';
-import Rocket from 'rocket';
+import Sheep from 'sheep';
 
 ReactDOM.render(
     <div>
-        <Navigation/>
         <Main/>
-        <Rocket/>
+        <Sheep/>
     </div>,
     document.getElementById('root')
 );
