@@ -3,21 +3,43 @@
 }
 
 .sheep--image {
-    width: 300px;
     position: absolute;
+    width: 300px;
     bottom: 100px;
 
     .eyeright, .eyeleft {
         animation: blink 6s ease infinite;
     }
+
+    .nose {
+        animation: twitch 3s ease infinite;
+    }
+
+    .mouth, .grass1, .grass2 {
+        animation: chew 2s ease infinite;
+    }
 }
 
 @keyframes blink {
-  0% {opacity: 1;}
-  24% {opacity: 1;}
-  25% {opacity: 0;}
-  26% {opacity: 1;}
-  27% {opacity: 0;}
-  28% {opacity: 1;}
-  100% {opacity: 1;}
+    0% {opacity: 1;}
+    24% {opacity: 1;}
+    25% {opacity: 0;}
+    26% {opacity: 1;}
+    27% {opacity: 0;}
+    28% {opacity: 1;}
+    100% {opacity: 1;}
+}
+
+@keyframes twitch {
+    0% {transform: translateY(0px);}
+    45% {transform: translateY(0px);}
+    50% {transform: translateY(5px);}
+    55% {transform: translateY(0px);}
+    100% {transform: translateY(0px);}
+}
+
+@keyframes chew {
+    0% {transform: translate(-5px, -3px);}
+    50% {transform: translate(5px, 3px);}
+    100% {transform: translate(-5px, -3px);}
 }
