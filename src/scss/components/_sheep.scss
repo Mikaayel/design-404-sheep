@@ -16,7 +16,7 @@
     }
 
     .mouth, .grass1, .grass2 {
-        animation: chew 2s ease infinite;
+        animation: chew 1.5s ease infinite;
     }
 }
 
@@ -40,6 +40,6 @@
 
 @keyframes chew {
     0% {transform: translate(-5px, -3px);}
-    50% {transform: translate(5px, 3px);}
+    40% {transform: translate(3px, 3px);}
     100% {transform: translate(-5px, -3px);}
 }
