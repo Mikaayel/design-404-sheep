@@ -40,13 +40,13 @@ module.exports = {
                 include: Path.join(__dirname, 'src'),
                 use: [
                     'file-loader?name=[hash:12].[ext]&outputPath=images/',
-                    
+
                     {
                         loader: 'image-webpack-loader',
                         options: {
                             gifsicle: {
                                 interlaced: false
-                            } 
+                            }
                         }
                     }
                 ]
@@ -66,7 +66,7 @@ module.exports = {
         hot: true,
         port: 3000,
         stats: 'minimal',
-        open: true
+        open: false
     },
     plugins: [
         new HtmlWebpackPlugin({

@@ -1,0 +1,23 @@
+#sheep {
+    text-align: center;
+}
+
+.sheep--image {
+    width: 300px;
+    position: absolute;
+    bottom: 100px;
+
+    .eyeright, .eyeleft {
+        animation: blink 6s ease infinite;
+    }
+}
+
+@keyframes blink {
+  0% {opacity: 1;}
+  24% {opacity: 1;}
+  25% {opacity: 0;}
+  26% {opacity: 1;}
+  27% {opacity: 0;}
+  28% {opacity: 1;}
+  100% {opacity: 1;}
+}
